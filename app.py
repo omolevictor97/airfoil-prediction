@@ -2,6 +2,8 @@ import pickle
 from flask import Flask, request, render_template, url_for, flash
 import numpy as np
 
+
+
 app = Flask(__name__, template_folder="templates")
 
 @app.route("/")
@@ -13,6 +15,7 @@ def predict():
     if request.method == "GET":
         return render_template("home.html")
     else:
+        
         frequency = float(request.form.get("frequency"))
         angle = float(request.form.get("angle"))
         chord_length = float(request.form.get("Chord length"))
